@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body{
+            background-image: url("{{ url_for('static',filename='images/avenger.jpg') }}");
+        }
+    </style>
 </head>
 <body>
-
+<p>hello,{{ name }}</p>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name(size=20) }}
+    <input type="submit" value="Go">
+</form>
 </body>
 </html>
